@@ -1,0 +1,29 @@
+@import "./variable.scss";
+
+.button {
+  cursor: pointer;
+  font-size: $sizeCaption;
+  color: #4d4d4d;
+  font-family: $fontSecondary;
+  font-weight: $semibold;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  line-height: 15px;
+  &--secondary {
+    background-color: #053a5b;
+    color: #ffffff;
+    position: relative;
+
+    &:focus::after {
+      border: 1px solid #053a5b;
+      position: absolute;
+      content: "";
+      top: -2px;
+      left: -2px;
+      width: 107%;
+      height: 116%;
+      border-radius: 3px;
+    }
+  }
+}

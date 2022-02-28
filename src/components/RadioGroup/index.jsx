@@ -6,21 +6,24 @@ export default function RadioGroup({list}) {
 
   const [isShow, setIsShow] = useState(false)
   const [keysearch, setKeySearch] = useState("")
-  const [checked, setChecked] = useState(list[0].value)
+  const [checked, setChecked] = useState(list[0])
   const [listValue, setListValue] = useState(list)
 
 
 
 
   const renderHeader = useMemo(()=>{
-    let itemChoice =  listValue.filter((item)=>{
-        return item.value === checked
+
+    let itemChoice =  list.filter((item)=>{
+        return item.value === checked.value
     })[0]
     return itemChoice.name
-  },[checked])
+
+  },[checked,list])
 
   const onChangeValue = (e) =>{
-    setChecked(e.target.value)
+      let checkedCurrent = list.filter((item)=>item.value === e.target.value)[0]
+    setChecked(checkedCurrent)
   }
 
   useEffect(()=>{
@@ -30,22 +33,22 @@ export default function RadioGroup({list}) {
       }else{
         setListValue(list)
       }
-  },[keysearch])
+  },[keysearch,list])
 
   return (
     <div className="radio-group-container">
         <div className="radio-group">
             <div className="radio-group__header">
-                <img src="images/radio-checked.svg" style={{width:"15px", height:"15px"}}/>
+                <img src="images/radio-checked.svg" style={{width:"15px", height:"15px"}} alt=""/>
                 <span>{renderHeader}</span>
-                <img onClick={()=>setIsShow((state)=>!state)} src="images/expand-vertical.svg" style={{width: '10px', height: '11px', marginLeft:"auto"}}/>
+                <img onClick={()=>setIsShow((state)=>!state)} src="images/expand-vertical.svg" alt='' style={{width: '10px', height: '11px', marginLeft:"auto"}}/>
             </div>
             {
                 isShow && (
                     <div className="radio-group__body">
                         <div className="radio-group__search">
                             <input type="text" value={keysearch} name="keysearch" onChange={(e)=>setKeySearch(e.target.value)}/>
-                            <img src="images/search-icon.svg"/>
+                            <img src="images/search-icon.svg" alt=''/>
                         </div>
                         <form>
                             {
@@ -53,7 +56,7 @@ export default function RadioGroup({list}) {
 
                                     return (
                                         <label className="wraper-radio" key={item.value}>{item.name}
-                                            <input type="radio" checked={item.value === checked} name="language" value={item.value} onChange={onChangeValue}/>
+                                            <input type="radio" checked={item.value === checked.value} name="language" value={item.value} onChange={onChangeValue}/>
                                             <span className="checkmark"></span>
                                         </label>
                                     )

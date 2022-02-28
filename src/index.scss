@@ -1,0 +1,62 @@
+@import "../src/style/variable.scss";
+
+body {
+  margin: 0;
+  font-family: $fontPrimary;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  //   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  //   sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+}
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+//     monospace;
+// }
+
+* {
+  box-sizing: border-box;
+}
+input[type="radio"] {
+  margin: 0;
+}
+input[type="checkbox"] {
+  margin: 0;
+}
+
+.page-title-s2ix {
+  font-family: $fontSecondary;
+  font-weight: $semilight;
+  font-size: $sizePageTitle;
+  line-height: 32px;
+  color: #025199;
+}
+.section-title-s2ix {
+  font-family: $fontSecondary;
+  font-weight: $semilight;
+  font-size: $sizeSectionTitle;
+  line-height: 27px;
+  color: #025199;
+}
+.heading-s2ix {
+  font-family: $fontSecondary;
+  font-weight: $bold;
+  font-size: $sizeHeading;
+  line-height: 19px;
+  color: #4d4d4d;
+}
+.main-text-s2ix {
+  font-family: $fontPrimary;
+  font-weight: $regular;
+  font-size: $sizeMainText;
+  line-height: 19px;
+  color: #000000;
+}
+.caption-s2ix {
+  font-family: $fontPrimary;
+  font-weight: $regular;
+  font-size: $sizeCaption;
+  line-height: 14px;
+  color: #4d4d4d;
+}

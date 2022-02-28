@@ -62,16 +62,16 @@ export default function CheckBoxGroup({list}) {
     <div className="checkbox-group-container">
         <div className="checkbox-group">
             <div className="checkbox-group__header">
-                <img src="images/checkbox-checked.svg" style={{width:"15px", height:"15px"}}/>
+                <img src="images/checkbox-checked.svg" style={{width:"15px", height:"15px"}} alt=''/>
                 <span>{listValue[0].name}<span style={{marginLeft:"2px"}}>(default)</span></span>
-                <img onClick={()=>setIsShow((state)=>!state)} src="images/expand-vertical.svg" style={{width: '10px', height: '11px', marginLeft:"auto"}}/>
+                <img alt='' onClick={()=>setIsShow((state)=>!state)} src="images/expand-vertical.svg" style={{width: '10px', height: '11px', marginLeft:"auto"}}/>
             </div>
             {
                 isShow && (
                     <div className="checkbox-group__body">
                         <div className="checkbox-group__search">
                             <input type="text" value={keysearch} name="keysearch" onChange={(e)=>setKeySearch(e.target.value)}/>
-                            <img src="images/search-icon.svg"/>
+                            <img alt='' src="images/search-icon.svg"/>
                         </div>
                         <form>
 
