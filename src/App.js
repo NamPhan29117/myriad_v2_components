@@ -1,40 +1,35 @@
 import React from "react";
 import "./App.css";
-import CheckBoxGroup from "./components/CheckboxGroup";
-import CheckBoxGroupNotSearch from "./components/CheckBoxGroupNotSearch";
-import DialogErrorMessage from "./components/DialogMessage/DialogErrorMessage";
-import DialogInfoMessage from "./components/DialogMessage/DialogInfoMessage";
-import DialogWarningMessage from "./components/DialogMessage/DialogWarningMessage";
-import MultiChoice from "./components/MultiChoice";
-import RadioGroup from "./components/RadioGroup/index";
-import SingleChoice from "./components/SingleChoice";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+const DashBoard  = React.lazy(()=>import("./pages/DashBoard"));
+const NotFound = React.lazy(()=>import("./pages/NotFound")); 
+const SettingPage = React.lazy(()=>import("./pages/SettingPage")); ;
+
 
 function App() {
-  const listRadio = [
-    { name: "English", value: "english" },
-    { name: "Spanish", value: "spanish" },
-    { name: "Vietnamese", value: "vietnamese" },
-  ];
-  const listCheckBox = [
-    { name: "English", value: "english", checked: false },
-    { name: "Spanish", value: "spanish", checked: false },
-    { name: "Vietnamese", value: "vietnamese", checked: false },
-  ];
   return (
-    <div className="App">
-      <p>nam phan</p>
-      <RadioGroup list={listRadio} />
-      <CheckBoxGroup list={listCheckBox} />
-      <CheckBoxGroupNotSearch list={listCheckBox} />
-      <MultiChoice list={listCheckBox} />
-      <SingleChoice list={listCheckBox} />
-
-      {/* Dialog mess */}
-
-      <DialogWarningMessage titleBody={false} />
-      {/* <DialogInfoMessage titleBody={false} leftButton={false} /> */}
-      {/* <DialogErrorMessage titleBody={false} /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <React.Suspense fallback={<>Loading...</>}>
+            <DashBoard />
+          </React.Suspense>
+        }>
+          <Route path="/setting" element={
+            <React.Suspense fallback={<>Loading...</>}>
+             <SettingPage />
+           </React.Suspense>
+          }/>
+          <Route path="*" element={<NotFound />}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
