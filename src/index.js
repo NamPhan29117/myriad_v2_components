@@ -13,6 +13,7 @@ import "antd/dist/antd.css";
 
 const msalInstance = new PublicClientApplication(msalConfig);
 
+
 ReactDOM.render(
   <React.StrictMode>
    <MsalProvider instance={msalInstance}>

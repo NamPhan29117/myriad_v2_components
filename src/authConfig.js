@@ -1,7 +1,7 @@
 export const msalConfig = {
     auth: {
-      clientId: "4765445b-32c6-49b0-83e6-1d93765276ca",
-      authority: "https://login.microsoftonline.com/myriad.onmicrosoft.com", // This is a URL (e.g. https://login.microsoftonline.com/{your tenant ID})
+      clientId: "f7d17889-0f41-4dd7-96eb-a847622699bf",
+      authority: "https://login.microsoftonline.com/1fd983f3-dc44-42f8-ad66-7972e9d94659", // This is a URL (e.g. https://login.microsoftonline.com/{your tenant ID})
       redirectUri: "http://localhost:3000",
     },
     cache: {
@@ -17,5 +17,5 @@ export const msalConfig = {
   
   // Add the endpoints here for Microsoft Graph API services you'd like to use.
   export const graphConfig = {
-      graphMeEndpoint: "Enter_the_Graph_Endpoint_Here/v1.0/me"
+      graphMeEndpoint: "https://graph.microsoft.com"
   };

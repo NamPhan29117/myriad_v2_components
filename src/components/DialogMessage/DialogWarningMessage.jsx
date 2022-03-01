@@ -3,8 +3,14 @@ import { Modal } from 'antd';
 import './style.scss'
 
 export default function DialogWarningMessage(props) {
-  const {titleBody} = props
+  const {titleBody,onOke} = props
   const [visible, setVisible] = useState(true);
+
+  const handleOkFunction = () =>{
+    onOke()
+    setVisible(false)
+  }
+
   return (
       <Modal
         onCancel={() => setVisible(false)}
@@ -16,7 +22,7 @@ export default function DialogWarningMessage(props) {
         className="dialog-warning"
         footer={[
           <button key="left" onClick={() => setVisible(false)} style={{marginRight:"10px"}} className='button' type='button'>Cancel</button>,
-          <button key="right" className='button button--secondary'>Action</button>
+          <button key="right" onClick={handleOkFunction} className='button button--secondary'>Action</button>
         ]}
       >
        {titleBody && <h3>{titleBody}</h3>}

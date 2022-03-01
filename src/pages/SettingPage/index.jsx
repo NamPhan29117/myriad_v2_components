@@ -19,6 +19,9 @@ export default function DashBoard() {
         { name: "Spanish", value: "spanish", checked: false },
         { name: "Vietnamese", value: "vietnamese", checked: false },
     ];
+    const actionProp = () =>{
+      console.log("code here")
+    }
   return (
     <div>
         <RadioGroup list={listRadio} />
@@ -29,7 +32,7 @@ export default function DashBoard() {
 
         {/* Dialog mess */}
 
-        <DialogWarningMessage titleBody={false} />
+        <DialogWarningMessage titleBody={false} onOke={actionProp}/>
         {/* <DialogInfoMessage titleBody={false} leftButton={false} /> */}
         {/* <DialogErrorMessage titleBody={false} /> */}
     </div>
