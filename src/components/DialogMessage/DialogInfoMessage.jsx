@@ -17,7 +17,7 @@ export default function DialogInfoMessage(props) {
         className="dialog-info"
         footer={[
           leftButton ? <button key="left" onClick={() => setVisible(false)} style={{marginRight:"10px"}} className='button' type='button'>Cancel</button> : "",
-          <button key="right" className='button button--secondary'>Continue</button>
+          <button key="right" onClick={() => setVisible(false)} className='button button--secondary'>Continue</button>
         ]}
       >
        {titleBody && <h3>{titleBody}</h3>}

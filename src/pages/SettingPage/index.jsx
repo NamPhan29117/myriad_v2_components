@@ -33,8 +33,8 @@ export default function DashBoard() {
         {/* Dialog mess */}
 
         <DialogWarningMessage titleBody={false} onOke={actionProp}/>
-        {/* <DialogInfoMessage titleBody={false} leftButton={false} /> */}
-        {/* <DialogErrorMessage titleBody={false} /> */}
+        <DialogInfoMessage titleBody={false} leftButton={false} />
+        <DialogErrorMessage titleBody={false} />
     </div>
   )
 }
