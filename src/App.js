@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/myriad_v2_components" element={
+        <Route path="/" element={
           <React.Suspense fallback={<>Loading...</>}>
             <DashBoard />
           </React.Suspense>
