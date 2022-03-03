@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmyriad_v2=self.webpackChunkmyriad_v2||[]).push([[254],{254:function(n,u,r){r.r(u),r.d(u,{default:function(){return t}});r(2791);var e=r(184);function t(){return(0,e.jsx)("div",{children:"NotFound"})}}}]);
+//# sourceMappingURL=254.6b575f1a.chunk.js.map
