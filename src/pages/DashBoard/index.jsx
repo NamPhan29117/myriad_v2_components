@@ -15,13 +15,13 @@ export default function DashBoard() {
   const [graphData, setGraphData] = useState(null);
 
   
-  useEffect(() => {
-    if(isAuthenticated){
-      navigate('/setting')
-    }else{
-      navigate("/")
-    }
-  },[isAuthenticated])
+  // useEffect(() => {
+  //   if(isAuthenticated){
+  //     navigate('/setting')
+  //   }else{
+  //     navigate("/")
+  //   }
+  // },[isAuthenticated])
 
 
 
