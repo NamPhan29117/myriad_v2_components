@@ -52,17 +52,17 @@ export default function DashBoard() {
       })
   }
 
-  useEffect(()=>{
-    if(accounts && accounts.length > 0){
-      RequestAccessToken()
-    }
-  },[accounts])
+  // useEffect(()=>{
+  //   if(accounts && accounts.length > 0){
+  //     RequestAccessToken()
+  //   }
+  // },[accounts])
 
   
 
   return (
     <div>
-       {!isAuthenticated ? <button onClick={() => handleLogin(instance)}>Sign in using Redirect</button> : <button variant="secondary" className="ml-auto" onClick={() => handleLogout(instance)}>Sign out using Redirect</button>}
+       {/* {!isAuthenticated ? <button onClick={() => handleLogin(instance)}>Sign in using Redirect</button> : <button variant="secondary" className="ml-auto" onClick={() => handleLogout(instance)}>Sign out using Redirect</button>}
        <AuthenticatedTemplate>
          <p>Info account</p>
          <ul>
@@ -71,16 +71,19 @@ export default function DashBoard() {
            <li>Email : {graphData ? graphData.userPrincipalName : "NOT DISPLAY BECAUSE CALL API FAIL WITH HTTP (CORS)"}</li>
            <li>Id : {graphData ? graphData.id : "NOT DISPLAY BECAUSE CALL API FAIL WITH HTTP (CORS)"}</li>
          </ul>
-       </AuthenticatedTemplate>
-       <UnauthenticatedTemplate>
+       </AuthenticatedTemplate> */}
+       {/* <UnauthenticatedTemplate>
         <p>You are not signed in! Please sign in.</p>
-       </UnauthenticatedTemplate>
+       </UnauthenticatedTemplate> */}
        <ul>
-         <AuthenticatedTemplate>
+         {/* <AuthenticatedTemplate>
           <li>
               <Link to='/setting'>setting for {accounts && accounts.length > 0 && accounts[0].name}</Link>
            </li>
-         </AuthenticatedTemplate>
+         </AuthenticatedTemplate> */}
+          <li>
+              <Link to='/setting'>setting for {accounts && accounts.length > 0 && accounts[0].name}</Link>
+          </li>
           
        </ul>
        <br/>
