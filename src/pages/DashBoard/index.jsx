@@ -62,7 +62,7 @@ export default function DashBoard() {
 
   return (
     <div>
-       {!isAuthenticated ? <button onClick={() => handleLogin(instance)}>Sign in using Redirect</button> : <button variant="secondary" className="ml-auto" onClick={() => handleLogout(instance)}>Sign out using Redirect</button>}
+       {/* {!isAuthenticated ? <button onClick={() => handleLogin(instance)}>Sign in using Redirect</button> : <button variant="secondary" className="ml-auto" onClick={() => handleLogout(instance)}>Sign out using Redirect</button>}
        <AuthenticatedTemplate>
          <p>Info account</p>
          <ul>
@@ -84,7 +84,7 @@ export default function DashBoard() {
           
        </ul>
        <br/>
-       <Outlet />
+       <Outlet /> */}
     </div>
   )
 }

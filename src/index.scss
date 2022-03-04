@@ -25,6 +25,22 @@ input[type="checkbox"] {
   margin: 0;
 }
 
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+.container-layout{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.main-content{
+   width: calc(100% - 219px) 
+}
+
 .page-title-s2ix {
   font-family: $fontSecondary;
   font-weight: $semilight;
