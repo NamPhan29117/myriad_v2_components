@@ -3,7 +3,7 @@ export const msalConfig = {
     clientId: "f7d17889-0f41-4dd7-96eb-a847622699bf",
     authority:
       "https://login.microsoftonline.com/1fd983f3-dc44-42f8-ad66-7972e9d94659", // This is a URL (e.g. https://login.microsoftonline.com/{your tenant ID})
-    redirectUri: "https://namphan29117.github.io/myriad_v2_components/setting",
+    redirectUri: "http://localhost:3000/setting",
   },
   cache: {
     cacheLocation: "sessionStorage", // This configures where your cache will be stored
