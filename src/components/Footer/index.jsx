@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+    <div style={{marginLeft:"219px"}}>Footer</div>
   )
 }

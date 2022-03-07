@@ -1,0 +1,26 @@
+@import '../../style/variable.scss';
+
+.tab-navigate{
+    padding-left: 30px;
+    display: flex;
+    &__item{
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+        background-color: #F4F4F4;
+        padding: 8px;
+        cursor: pointer;
+        img{
+            margin-right: 15px;
+            width: 15px;
+            height: auto;
+        }
+        span{
+            color:#333333;
+            font-family: $fontSecondary;
+            font-size: $sizeHeading;
+            line-height: 19px;
+            font-weight: $regular;
+        }
+    }
+}

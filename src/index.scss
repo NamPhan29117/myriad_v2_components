@@ -39,6 +39,14 @@ input {
   font-weight: $semilight;
 }
 
+.page-title-s2ix {
+  font-family: $fontSecondary;
+  font-size: $sizePageTitle;
+  line-height: 2rem;
+  color: #025199;
+  font-weight: $semilight;
+}
+
 .container-layout {
   display: flex;
   width: 100%;

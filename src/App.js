@@ -2,25 +2,68 @@ import React from "react";
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import BasicLayout from "./Layouts/BasicLayout";
 
+const BasicLayout = React.lazy(() => import("./Layouts/BasicLayout"));
 const DashBoard = React.lazy(() => import("./pages/DashBoard"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 const SettingPage = React.lazy(() => import("./pages/SettingPage"));
+const RecordAudio = React.lazy(() => import("./pages/RecordAudio"));
+const UploadAudio = React.lazy(() => import("./pages/UploadAudio"));
+const UploadDocument = React.lazy(() => import("./pages/UploadDocument"));
+const DictateDocument = React.lazy(() => import("./pages/DictateDocument"))
 
 function App() {
   return (
     <BrowserRouter>
-      <BasicLayout>
         <Routes>
           <Route
             path="/"
             element={
               <React.Suspense fallback={<>Loading...</>}>
-                <DashBoard />
+                <BasicLayout />
               </React.Suspense>
             }
           >
+            <Route
+              index
+              element={
+                <React.Suspense fallback={<>Loading...</>}>
+                  <DashBoard />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/record-audio"
+              element={
+                <React.Suspense fallback={<>Loading...</>}>
+                  <RecordAudio />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/upload-audio"
+              element={
+                <React.Suspense fallback={<>Loading...</>}>
+                  <UploadAudio />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/upload-document"
+              element={
+                <React.Suspense fallback={<>Loading...</>}>
+                  <UploadDocument />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/dictate-document"
+              element={
+                <React.Suspense fallback={<>Loading...</>}>
+                  <DictateDocument />
+                </React.Suspense>
+              }
+            />
             <Route
               path="/setting"
               element={
@@ -32,7 +75,6 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes> 
-      </BasicLayout>
     </BrowserRouter>
   );
 }

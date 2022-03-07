@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../components/Footer'
 import MenuHeader from '../components/MenuHeader'
 import Sidebar from '../components/Sidebar'
+import { Link, Outlet } from 'react-router-dom'
 
 export default function BasicLayout(props) {
   return (
@@ -10,7 +11,7 @@ export default function BasicLayout(props) {
           <div className="container-layout">
             <Sidebar />
             <div className="main-content">
-              {props.children}
+              <Outlet />
             </div>
           </div>
         <Footer />

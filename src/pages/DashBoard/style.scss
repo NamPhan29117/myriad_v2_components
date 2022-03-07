@@ -1,0 +1,42 @@
+
+@import '../../style/variable.scss';
+.dashboard-page{
+    .title-dashboard{
+        padding-left: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 0;
+    }
+
+    .list-function{
+        padding-left: 30px;
+        margin-left: -7.5px;
+        display: flex;
+        margin-top: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+        .item-function-wrap{
+            padding-left: 7.5px;
+            padding-right: 7.5px;
+            
+        }
+        .item-function{
+            width: 254px;
+            height: 254px;
+            background-color: #29ABE2;
+            display:flex;
+            padding: 30px 7.5px;
+            flex-direction:column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            span {
+                font-family: $fontSecondary;
+                font-size: $sizePageTitle;
+                color:#ffffff;
+                line-height: 32px;
+                font-weight: $semilight;
+            }
+        }
+    }
+}
