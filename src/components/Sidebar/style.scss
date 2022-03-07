@@ -1,3 +1,44 @@
-.sidebar{
-    width: 219px;
+@import "../../style/variable.scss";
+
+.wrap-sidebar {
+  h1 {
+    margin-top: 22px;
+    margin-bottom: 15px;
+    margin-left: 26px;
+  }
+  .sidebar {
+    height: 100%;
+    .ant-menu-submenu {
+      margin-top: 20px;
+    }
+    .ant-menu-submenu-title {
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+      img.icon-sidebar {
+        width: 15px;
+        height: auto;
+      }
+      .ant-menu-title-content {
+        color: #636363;
+        font-size: $sizeHeading;
+        line-height: 19px;
+        font-family: $fontSecondary;
+        font-weight: $regular;
+        margin-left: 22px;
+      }
+    }
+
+    .ant-menu {
+      .ant-menu-item {
+        .ant-menu-title-content {
+          color: #636363;
+          font-size: $sizeHeading;
+          line-height: 19px;
+          font-family: $fontSecondary;
+          font-weight: $regular;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
 }

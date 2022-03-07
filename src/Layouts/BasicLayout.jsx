@@ -9,9 +9,9 @@ export default function BasicLayout(props) {
         <MenuHeader/>
           <div className="container-layout">
             <Sidebar />
-            <divc className="main-content">
+            <div className="main-content">
               {props.children}
-            </divc>
+            </div>
           </div>
         <Footer />
     </div>
