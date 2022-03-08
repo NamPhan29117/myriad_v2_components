@@ -1,15 +1,15 @@
 
 @import '../../style/variable.scss';
 .dashboard-page{
+    padding-left: 30px;
+    padding-right: 30px;
     .title-dashboard{
-        padding-left: 30px;
         padding-top: 20px;
         padding-bottom: 20px;
         margin-bottom: 0;
     }
 
     .list-function{
-        padding-left: 30px;
         margin-left: -7.5px;
         display: flex;
         margin-top: 18px;
