@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/190.c3c693d4.chunk.js","mappings":"6KAEe,SAASA,IACtB,OACE","sources":["pages/DictateDocument/index.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nexport default function DictateDocument() {\r\n  return (\r\n    <div>dictate-document</div>\r\n  )\r\n}\r\n"],"names":["DictateDocument"],"sourceRoot":""}

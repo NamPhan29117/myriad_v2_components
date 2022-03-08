@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/400.01f2a1ef.chunk.js","mappings":"6KAEe,SAASA,IACtB,OACE","sources":["pages/UploadAudio/index.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nexport default function UploadAudio() {\r\n  return (\r\n    <div>UploadAudio</div>\r\n  )\r\n}\r\n"],"names":["UploadAudio"],"sourceRoot":""}

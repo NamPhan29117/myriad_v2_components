@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/390.4121deef.chunk.js","mappings":"6KAEe,SAASA,IACtB,OACE","sources":["pages/UploadDocument/index.jsx"],"sourcesContent":["import React from 'react'\r\n\r\nexport default function UploadDocument() {\r\n  return (\r\n    <div>UploadDocument</div>\r\n  )\r\n}\r\n"],"names":["UploadDocument"],"sourceRoot":""}

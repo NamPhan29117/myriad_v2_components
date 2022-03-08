@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmyriad_v2=self.webpackChunkmyriad_v2||[]).push([[190],{4190:function(n,e,t){t.r(e),t.d(e,{default:function(){return r}});t(2791);var u=t(184);function r(){return(0,u.jsx)("div",{children:"dictate-document"})}}}]);
+//# sourceMappingURL=190.c3c693d4.chunk.js.map

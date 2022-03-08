@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmyriad_v2=self.webpackChunkmyriad_v2||[]).push([[390],{2390:function(n,u,e){e.r(u),e.d(u,{default:function(){return t}});e(2791);var r=e(184);function t(){return(0,r.jsx)("div",{children:"UploadDocument"})}}}]);
+//# sourceMappingURL=390.4121deef.chunk.js.map
