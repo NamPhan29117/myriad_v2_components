@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/myriad_v2_components/static/css/main.4b31f25c.css",
-    "main.js": "/myriad_v2_components/static/js/main.cddc83db.js",
+    "main.js": "/myriad_v2_components/static/js/main.ced2af49.js",
     "static/css/621.a37d6d73.chunk.css": "/myriad_v2_components/static/css/621.a37d6d73.chunk.css",
     "static/js/621.52aa3b17.chunk.js": "/myriad_v2_components/static/js/621.52aa3b17.chunk.js",
     "static/css/842.9ee0c358.chunk.css": "/myriad_v2_components/static/css/842.9ee0c358.chunk.css",
@@ -20,7 +20,7 @@
     "static/js/541.35b83795.chunk.js": "/myriad_v2_components/static/js/541.35b83795.chunk.js",
     "index.html": "/myriad_v2_components/index.html",
     "main.4b31f25c.css.map": "/myriad_v2_components/static/css/main.4b31f25c.css.map",
-    "main.cddc83db.js.map": "/myriad_v2_components/static/js/main.cddc83db.js.map",
+    "main.ced2af49.js.map": "/myriad_v2_components/static/js/main.ced2af49.js.map",
     "621.a37d6d73.chunk.css.map": "/myriad_v2_components/static/css/621.a37d6d73.chunk.css.map",
     "621.52aa3b17.chunk.js.map": "/myriad_v2_components/static/js/621.52aa3b17.chunk.js.map",
     "842.9ee0c358.chunk.css.map": "/myriad_v2_components/static/css/842.9ee0c358.chunk.css.map",
@@ -40,6 +40,6 @@
   },
   "entrypoints": [
     "static/css/main.4b31f25c.css",
-    "static/js/main.cddc83db.js"
+    "static/js/main.ced2af49.js"
   ]
 }
