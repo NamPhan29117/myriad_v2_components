@@ -15,16 +15,16 @@ export default function MenuHeader() {
         </div>
         <div className="header-menu__left">
             <div className="item-left">
-                <img src="/images/email.svg" />
+                <img src="/images/email.svg" alt=''/>
             </div>
             <div className="item-left">
-                <img src="/images/pth-14.svg" />
+                <img src="/images/pth-14.svg" alt=''/>
             </div>
             <div className="item-left">
-                <img src="/images/big-data.svg" />
+                <img src="/images/big-data.svg" alt=''/>
             </div>
             <div className="item-avatar">
-                <img src="/images/avatar-test.png" />
+                <img src="/images/avatar-test.png" alt=''/>
             </div>
         </div>
     </div>
