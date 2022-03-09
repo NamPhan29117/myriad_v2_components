@@ -7,6 +7,7 @@ import { useMsal,useIsAuthenticated, AuthenticatedTemplate, UnauthenticatedTempl
 import { loginRequest } from "../../authConfig";
 import {callMsGraph} from './testGraph'
 import { useNavigate } from 'react-router-dom';
+import { customPath } from '../../utils';
 
 
 export default function DashBoard() {
@@ -72,25 +73,25 @@ export default function DashBoard() {
       <TabNavigate />
       <div className="list-function">
         <div className="item-function-wrap">
-          <Link className="item-function" to='/myriad_v2_components/record-audio'>
+          <Link className="item-function" to={customPath('/record-audio')}>
             <span>Record New Audio</span>
             <img src="images/record-icon-big.svg" alt="" />
           </Link>
         </div>
         <div className="item-function-wrap">
-          <Link className="item-function" to="/myriad_v2_components/upload-audio">
+          <Link className="item-function" to={customPath('/upload-audio')}>
             <span>Upload New Audio</span>
             <img src="images/upload-icon-big.svg" alt="" />
           </Link>
         </div>
         <div className="item-function-wrap">
-          <Link className="item-function" to="/myriad_v2_components/upload-document">
+          <Link className="item-function"  to={customPath('/upload-document')}>
             <span>Upload New Document</span>
             <img src="images/upload-document-icon-big.svg" alt="" />
           </Link>
         </div>
         <div className="item-function-wrap">
-          <Link className="item-function" to="/myriad_v2_components/dictate-document">
+          <Link className="item-function" to={customPath('/dictate-document')}>
             <span>Dictate New Document</span>
             <img src="images/dictate-document-icon-big.svg" alt="" />
           </Link>

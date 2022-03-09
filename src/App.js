@@ -3,6 +3,7 @@ import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BasicLayout from "./Layouts/BasicLayout";
+import { customPath } from "./utils";
 
 // const BasicLayout = React.lazy(() => import("./Layouts/BasicLayout"));
 const DashBoard = React.lazy(() => import("./pages/DashBoard"));
@@ -20,7 +21,7 @@ function App() {
         <Routes>
           <Route
             index
-            path="/myriad_v2_components"
+            path={customPath("/")}
             element={
               <React.Suspense fallback={<>Loading...</>}>
                 <DashBoard />
@@ -28,7 +29,7 @@ function App() {
             }
           />
           <Route
-            path="/myriad_v2_components/record-audio"
+            path={customPath("/record-audio")}
             element={
               <React.Suspense fallback={<>Loading...</>}>
                 <RecordAudio />
@@ -36,7 +37,7 @@ function App() {
             }
           />
           <Route
-            path="/myriad_v2_components/upload-audio"
+            path={customPath("/upload-audio")}
             element={
               <React.Suspense fallback={<>Loading...</>}>
                 <UploadAudio />
@@ -44,7 +45,7 @@ function App() {
             }
           />
           <Route
-            path="/myriad_v2_components/upload-document"
+            path={customPath("/upload-document")}
             element={
               <React.Suspense fallback={<>Loading...</>}>
                 <UploadDocument />
@@ -52,7 +53,7 @@ function App() {
             }
           />
           <Route
-            path="/myriad_v2_components/dictate-document"
+            path={customPath("/dictate-document")}
             element={
               <React.Suspense fallback={<>Loading...</>}>
                 <DictateDocument />
@@ -60,7 +61,7 @@ function App() {
             }
           />
           <Route
-            path="/myriad_v2_components/setting"
+            path={customPath("/setting")}
             element={
               <React.Suspense fallback={<>Loading...</>}>
                 <SettingPage />
@@ -75,3 +76,5 @@ function App() {
 }
 
 export default App;
+
+// "homepage": "https://NamPhan29117.github.io/myriad_v2_components/",
