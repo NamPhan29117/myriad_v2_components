@@ -1,9 +1,7 @@
 {
   "files": {
-    "main.css": "/myriad_v2_components/static/css/main.4b31f25c.css",
-    "main.js": "/myriad_v2_components/static/js/main.65591480.js",
-    "static/css/621.a37d6d73.chunk.css": "/myriad_v2_components/static/css/621.a37d6d73.chunk.css",
-    "static/js/621.449d196b.chunk.js": "/myriad_v2_components/static/js/621.449d196b.chunk.js",
+    "main.css": "/myriad_v2_components/static/css/main.82d70b47.css",
+    "main.js": "/myriad_v2_components/static/js/main.e7cb970e.js",
     "static/css/842.9ee0c358.chunk.css": "/myriad_v2_components/static/css/842.9ee0c358.chunk.css",
     "static/js/842.c5bea1a1.chunk.js": "/myriad_v2_components/static/js/842.c5bea1a1.chunk.js",
     "static/js/254.6b575f1a.chunk.js": "/myriad_v2_components/static/js/254.6b575f1a.chunk.js",
@@ -15,14 +13,10 @@
     "static/js/390.4121deef.chunk.js": "/myriad_v2_components/static/js/390.4121deef.chunk.js",
     "static/js/190.c3c693d4.chunk.js": "/myriad_v2_components/static/js/190.c3c693d4.chunk.js",
     "static/js/787.e2449fbb.chunk.js": "/myriad_v2_components/static/js/787.e2449fbb.chunk.js",
-    "static/js/155.64e3c44f.chunk.js": "/myriad_v2_components/static/js/155.64e3c44f.chunk.js",
-    "static/js/457.0d22f040.chunk.js": "/myriad_v2_components/static/js/457.0d22f040.chunk.js",
     "static/js/541.35b83795.chunk.js": "/myriad_v2_components/static/js/541.35b83795.chunk.js",
     "index.html": "/myriad_v2_components/index.html",
-    "main.4b31f25c.css.map": "/myriad_v2_components/static/css/main.4b31f25c.css.map",
-    "main.65591480.js.map": "/myriad_v2_components/static/js/main.65591480.js.map",
-    "621.a37d6d73.chunk.css.map": "/myriad_v2_components/static/css/621.a37d6d73.chunk.css.map",
-    "621.449d196b.chunk.js.map": "/myriad_v2_components/static/js/621.449d196b.chunk.js.map",
+    "main.82d70b47.css.map": "/myriad_v2_components/static/css/main.82d70b47.css.map",
+    "main.e7cb970e.js.map": "/myriad_v2_components/static/js/main.e7cb970e.js.map",
     "842.9ee0c358.chunk.css.map": "/myriad_v2_components/static/css/842.9ee0c358.chunk.css.map",
     "842.c5bea1a1.chunk.js.map": "/myriad_v2_components/static/js/842.c5bea1a1.chunk.js.map",
     "254.6b575f1a.chunk.js.map": "/myriad_v2_components/static/js/254.6b575f1a.chunk.js.map",
@@ -34,12 +28,10 @@
     "390.4121deef.chunk.js.map": "/myriad_v2_components/static/js/390.4121deef.chunk.js.map",
     "190.c3c693d4.chunk.js.map": "/myriad_v2_components/static/js/190.c3c693d4.chunk.js.map",
     "787.e2449fbb.chunk.js.map": "/myriad_v2_components/static/js/787.e2449fbb.chunk.js.map",
-    "155.64e3c44f.chunk.js.map": "/myriad_v2_components/static/js/155.64e3c44f.chunk.js.map",
-    "457.0d22f040.chunk.js.map": "/myriad_v2_components/static/js/457.0d22f040.chunk.js.map",
     "541.35b83795.chunk.js.map": "/myriad_v2_components/static/js/541.35b83795.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b31f25c.css",
-    "static/js/main.65591480.js"
+    "static/css/main.82d70b47.css",
+    "static/js/main.e7cb970e.js"
   ]
 }
