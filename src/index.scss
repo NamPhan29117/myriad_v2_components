@@ -92,3 +92,22 @@ input {
   line-height: 14px;
   color: #4d4d4d;
 }
+
+.item-function-small {
+  width: 120px;
+  height: 120px;
+  background-color: #29abe2;
+  display: flex;
+  padding: 10px 5px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  span {
+    font-family: $fontPrimary;
+    font-size: $sizeMainText;
+    color: #ffffff;
+    line-height: 19px;
+    font-weight: $regular;
+  }
+}
