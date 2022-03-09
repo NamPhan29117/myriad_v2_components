@@ -74,25 +74,25 @@ export default function DashBoard() {
         <div className="item-function-wrap">
           <Link className="item-function" to='/myriad_v2_components/record-audio'>
             <span>Record New Audio</span>
-            <img src="/images/record-icon-big.svg" alt="" />
+            <img src="images/record-icon-big.svg" alt="" />
           </Link>
         </div>
         <div className="item-function-wrap">
           <Link className="item-function" to="/myriad_v2_components/upload-audio">
             <span>Upload New Audio</span>
-            <img src="/images/upload-icon-big.svg" alt="" />
+            <img src="images/upload-icon-big.svg" alt="" />
           </Link>
         </div>
         <div className="item-function-wrap">
           <Link className="item-function" to="/myriad_v2_components/upload-document">
             <span>Upload New Document</span>
-            <img src="/images/upload-document-icon-big.svg" alt="" />
+            <img src="images/upload-document-icon-big.svg" alt="" />
           </Link>
         </div>
         <div className="item-function-wrap">
           <Link className="item-function" to="/myriad_v2_components/dictate-document">
             <span>Dictate New Document</span>
-            <img src="/images/dictate-document-icon-big.svg" alt="" />
+            <img src="images/dictate-document-icon-big.svg" alt="" />
           </Link>
         </div>
       </div>
