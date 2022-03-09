@@ -11,7 +11,8 @@ export default function BasicLayout(props) {
           <div className="container-layout">
             <Sidebar />
             <div className="main-content">
-              <Outlet />
+              {/* <Outlet /> */}
+              {props.children}
             </div>
           </div>
         <Footer />

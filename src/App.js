@@ -2,8 +2,9 @@ import React from "react";
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BasicLayout from "./Layouts/BasicLayout";
 
-const BasicLayout = React.lazy(() => import("./Layouts/BasicLayout"));
+// const BasicLayout = React.lazy(() => import("./Layouts/BasicLayout"));
 const DashBoard = React.lazy(() => import("./pages/DashBoard"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 const SettingPage = React.lazy(() => import("./pages/SettingPage"));
@@ -15,15 +16,8 @@ const DictateDocument = React.lazy(() => import("./pages/DictateDocument"));
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/myriad_v2_components"
-          element={
-            <React.Suspense fallback={<>Loading...</>}>
-              <BasicLayout />
-            </React.Suspense>
-          }
-        >
+      <BasicLayout>
+        <Routes>
           <Route
             index
             path="/myriad_v2_components"
@@ -74,8 +68,8 @@ function App() {
             }
           />
           <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+        </Routes>
+      </BasicLayout>
     </BrowserRouter>
   );
 }
