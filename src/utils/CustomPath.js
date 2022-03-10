@@ -1,3 +1,3 @@
 export const customPath = (path) => {
-  return `${path}`;
+  return `/myriad_v2_components${path}`;
 };
