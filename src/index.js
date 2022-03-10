@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./reset.scss";
+
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -10,6 +10,7 @@ import { msalConfig } from "./authConfig";
 import "../src/style/button.scss";
 import "../src/style/variable.scss";
 import "antd/dist/antd.css";
+import "./reset.scss";
 
 const msalInstance = new PublicClientApplication(msalConfig);
 

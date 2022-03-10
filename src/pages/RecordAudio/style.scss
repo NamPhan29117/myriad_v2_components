@@ -5,7 +5,12 @@
   .wrap-item-function-small {
     margin: 20px 0;
   }
+  .body-content{
+    display: flex;
+    align-items: flex-start;
+  }
   .recording {
+    margin-right: 15px;
     padding: 15px 30px 45px 30px;
     border: 1px solid #707070;
     width: 522px;
@@ -54,6 +59,92 @@
         text-align: right;
         margin-top: 5px;
       }
+    }
+
+    .threat-level{
+      margin-top: 30px;
+      .title{
+        font-size: $sizeSectionTitle;
+        font-weight: $semilight;
+        color: #025199;
+        font-family: $fontSecondary;
+        line-height: 27px;
+      }
+      .threat-level-bar{
+        width: 337px;
+        height:20px;
+        margin-top: 20px;
+        background-color:#999999;
+        position: relative;
+        &--sub {
+          position: absolute;
+          width: calc(100% - 150px);
+          content: "";
+          background-color:#E6AD00;
+          top: 0;left: 0;
+          height:100%;
+          border-right: 8px solid #707070;
+          cursor: pointer;
+        }
+      }
+      .threat-list-title{
+        margin-top: 30px;
+        font-size: $sizeHeading;
+        font-weight: $bold;
+        font-family: $fontSecondary;
+        line-height:19px;
+      }
+      .threat-work-list{
+        margin-top: 10px;
+        display: flex;
+        span{
+          background-color:#A90011;
+          padding: 4px;
+          color: #fff;
+          border-radius:4px;
+          margin-right: 15px;
+          font-size: $sizeMainText;
+          font-family: $fontPrimary;
+          font-weight:$regular;
+          line-height:19px
+        }
+
+      }
+    }
+    .actions{
+      margin-top: 30px;
+      .title{
+        font-size: $sizeSectionTitle;
+        font-weight: $semilight;
+        color: #025199;
+        font-family: $fontSecondary;
+        line-height: 27px;
+      }
+      .list-actions{
+        display: flex;
+        margin-top: 20px;
+
+      }
+
+      .wrap-item-action-small{
+        cursor: pointer;
+        margin: 20px 0;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .box-setting{
+    border: 1px solid #707070;
+    padding: 15px;
+    min-width: 340px;
+    .title-box-setting{
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+    .title-security{
+      margin-top: 20px;
+      margin-bottom: 5px;
     }
   }
 }

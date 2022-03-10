@@ -77,4 +77,4 @@ function App() {
 
 export default App;
 
-// "homepage": "https://NamPhan29117.github.io/myriad_v2_components/",
+

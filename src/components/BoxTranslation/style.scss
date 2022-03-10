@@ -1,0 +1,43 @@
+@import '../../style/variable.scss';
+
+.box-translation{
+    margin-right: 15px;
+    margin-bottom: 15px;
+    min-height: 220px;
+    min-width: 500px;
+    padding: 15px;
+    border: 1px solid #707070;
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__search{
+        height: 23px;
+        position: relative;
+        width: 184px;
+        input{
+            height: 100%;
+            font-size:$sizeCaption;
+            color: #666666;
+            line-height:14px;
+            font-weight: $regular;
+            padding:2px 5px;
+            padding-right: 25px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        img{
+            position: absolute;
+            top: 6px;
+            right: 11px;
+            width: 12px;
+        }
+    }
+    &__body{
+        margin-top: 13px;
+        
+    }
+}
