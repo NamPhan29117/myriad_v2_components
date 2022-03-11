@@ -13,6 +13,7 @@ const RecordAudio = React.lazy(() => import("./pages/RecordAudio"));
 const UploadAudio = React.lazy(() => import("./pages/UploadAudio"));
 const UploadDocument = React.lazy(() => import("./pages/UploadDocument"));
 const DictateDocument = React.lazy(() => import("./pages/DictateDocument"));
+const TestLayout = React.lazy(() => import("./pages/TestLayoutReact"))
 
 function App() {
   return (
@@ -65,6 +66,14 @@ function App() {
             element={
               <React.Suspense fallback={<>Loading...</>}>
                 <SettingPage />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path={customPath("/test-layout")}
+            element={
+              <React.Suspense fallback={<>Loading...</>}>
+                <TestLayout />
               </React.Suspense>
             }
           />

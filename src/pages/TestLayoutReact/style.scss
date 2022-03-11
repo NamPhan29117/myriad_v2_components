@@ -1,0 +1,63 @@
+.flex{
+    display: flex;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+
+.v-scroll-auto {
+    overflow-y: auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.bolt-page-white {
+    background-color: rgba(255,255,255,1);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.absolute-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.scroll-hidden {
+    overflow: hidden;
+}
+
+.scroll-auto {
+    overflow: auto;
+}
+
+.dashboard-content .devops-dashboard-grid {
+    margin: 10px 0 0 10px;
+}
+
+.devops-dashboard-grid {
+    position: relative;
+}
+
+.devops-dashboard-grid.editable {
+    background-color: rgba(218,218,218,1);
+    background-color: rgba(var(--palette-neutral-10,218, 218, 218),1);
+    background-size: 170px 170px;
+    background-position: 0 10px;
+    background-image: linear-gradient(90deg,rgba(255,255,255,1) 0,rgba(255,255,255,1) 10px,rgba(232,232,232,0) 10px,rgba(232,232,232,0) 170px),linear-gradient(0deg,rgba(255,255,255,1) 0,rgba(255,255,255,1) 10px,rgba(232,232,232,0) 10px,rgba(232,232,232,0) 170px);
+    background-image: linear-gradient(90deg,rgba(var(--palette-neutral-0,255, 255, 255),1) 0,rgba(var(--palette-neutral-0,255, 255, 255),1) 10px,rgba(232,232,232,0) 10px,rgba(232,232,232,0) 170px),linear-gradient(0deg,rgba(var(--palette-neutral-0,255, 255, 255),1) 0,rgba(var(--palette-neutral-0,255, 255, 255),1) 10px,rgba(232,232,232,0) 10px,rgba(232,232,232,0) 170px);
+}
