@@ -129,7 +129,9 @@ export default function Index() {
                               <input name={height} value={height} onChange={(e)=>setHeight(e.target.value)}/>                    
                             </Modal>                       
                             {/* PHAN WIDGET */}
-                            <div className="dashboards-widget-inline-catalog flex-column flex-noshrink scroll-hidden"></div>
+                            <div className="dashboards-widget-inline-catalog flex-column flex-noshrink scroll-hidden">
+                                phan tab them
+                            </div>
                         </div>
                     </div>
                 </div>    

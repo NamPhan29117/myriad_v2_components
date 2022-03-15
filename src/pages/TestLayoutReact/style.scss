@@ -1,61 +1,67 @@
-.dashboard-view{
-    width: 100vh;
-    height: 100vh;
+.dashboard-view {
+  width: 100vw;
+  height: 100vh;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
 
 .flex-grow {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
-
 .v-scroll-auto {
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 .relative {
-    position: relative;
+  position: relative;
 }
 
 .bolt-page-white {
-    background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .absolute-fill {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 .flex-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .scroll-hidden {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .scroll-auto {
-    overflow: auto;
+  overflow: auto;
 }
 
 .dashboard-content .devops-dashboard-grid {
-    margin: 10px 0 0 10px;
+  margin: 10px 0 0 10px;
 }
 
 .devops-dashboard-grid {
-    position: relative;
+  position: relative;
+}
+
+.dashboards-widget-inline-catalog {
+  width: 340px;
+
+  background-color: red;
+  height: 100vh;
 }
 
 // .devops-dashboard-grid.editable {
