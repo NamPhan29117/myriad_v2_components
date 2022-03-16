@@ -4,6 +4,7 @@ import '/node_modules/react-grid-layout/css/styles.css'
 import '/node_modules/react-resizable/css/styles.css'
 import GridLayout from "react-grid-layout";
 import { Modal } from 'antd';
+import ItemWidget from './itemWidget';
 
 
 export default function Index() {
@@ -69,77 +70,49 @@ export default function Index() {
       }
 
   return (
-      <div>
-            <div onClick={() =>{
-                    addItem()
-                }}>ADD</div>
-            <div className="v-scroll-auto flex flex-grow relative region-content" data-renderedregion="content" role="main">
-                
-                <div className="dashboard-view">
-                    <div class="absolute-fill bolt-page v-scroll-auto flex-column bolt-page-white">
-                        <div class="dashboard-content flex-grow flex-row scroll-hidden">
-                            {/* PHAN TASK */}
-                            <div className="primary-content flex-grow flex-column scroll-hidden">
-                                <div className="flex-grow flex-column scroll-hidden">
-                                    <div className="scroll-auto flex-grow flex-column">
-                                        <div className="devops-dashboard-grid flex-grow editable">
-                                            <GridLayout
-                                                className="layout"
-                                                layout={layout}
-                                                cols={12}
-                                                compactType="horizontal"
-                                                rowHeight={160}
-                                                width={2030}
-                                                onLayoutChange={(layout) => console.log(layout)}
-                                            >
-                                                {layout.map((item) => (
-                                                <div
-                                                    key={item.i}
-                                                    style={{
-                                                    backgroundColor: "gray",
-                                                    display: "flex",
-                                                    justifyContent: "space-between",
-                                                    alignItems: "center",
-                                                    fontSize: 16,
-                                                    color: "white",
-                                                    flexFlow:"column"
-                                                    }}
-                                                >
-                                                     <span onClick={()=>{
-                                                        showModal()
-                                                        setItemResize(item.i)
-                                                    }}>config</span>
-                                                    <span
-                                                    className="remove"
-                                                    onClick={()=>onRemoveItem(item.i)}
-                                                    >
-                                                    x
-                                                    </span>
-                                                    <span>{item.i}</span>
-                                                   
+        <div className="v-scroll-auto flex flex-grow relative region-content" data-renderedregion="content" role="main">
+            
+            <div className="dashboard-view">
+                <div class="absolute-fill bolt-page v-scroll-auto flex-column bolt-page-white">
+                    <div class="dashboard-content flex-grow flex-row scroll-hidden">
+                        {/* PHAN TASK */}
+                        <div className="primary-content flex-grow flex-column scroll-hidden">
+                            <div className="flex-grow flex-column scroll-hidden">
+                                <div className="scroll-auto flex-grow flex-column">
+                                    <div className="devops-dashboard-grid flex-grow editable">
+                                        <GridLayout
+                                            className="layout"
+                                            layout={layout}
+                                            cols={12}
+                                            compactType="horizontal"
+                                            rowHeight={160}
+                                            width={2030}
+                                            onLayoutChange={(layout) => console.log(layout)}
+                                            isResizable={false}
+                                        >
+                                            {layout.map((item) => (
+                                                <div key={item.i} className="widget-layout">
+                                                    <ItemWidget itemWidget={item} /> 
                                                 </div>
-                                                ))}
-                                            </GridLayout>
-                                        </div>
+                                           
+                                            ))}
+                                        </GridLayout>
                                     </div>
                                 </div>
                             </div>
-                            <Modal title="Basic Modal" visible={isModalVisible} onCancel={handleCancel} onOk={handleResize}>
-                              <input name={width} value={width} onChange={(e)=>setWidth(e.target.value)}/>     
-                              <input name={height} value={height} onChange={(e)=>setHeight(e.target.value)}/>                    
-                            </Modal>                       
-                            {/* PHAN WIDGET */}
-                            <div className="dashboards-widget-inline-catalog flex-column flex-noshrink scroll-hidden">
-                                phan tab them
-                            </div>
+                        </div>
+                        <Modal title="Basic Modal" visible={isModalVisible} onCancel={handleCancel} onOk={handleResize}>
+                            <input name={width} value={width} onChange={(e)=>setWidth(e.target.value)}/>     
+                            <input name={height} value={height} onChange={(e)=>setHeight(e.target.value)}/>                    
+                        </Modal>                       
+                        {/* PHAN WIDGET */}
+                        <div className="dashboards-widget-inline-catalog flex-column flex-noshrink scroll-hidden">
+                            phan tab them
                         </div>
                     </div>
-                </div>    
-            </div>
-      </div>
-    
-
-
+                </div>
+            </div>    
+        </div> 
 
   )
 }

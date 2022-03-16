@@ -60,8 +60,21 @@
 .dashboards-widget-inline-catalog {
   width: 340px;
 
-  background-color: red;
+  background-color: #e7e7e7;
   height: 100vh;
+  border-left: 1px solid #dadada;
+}
+
+.widget-layout {
+  background-color: #fafbfc;
+  border: 1px solid #dadada;
+  color: #172b4d;
+  cursor: move;
+}
+.wrap-widget {
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
 }
 
 // .devops-dashboard-grid.editable {
