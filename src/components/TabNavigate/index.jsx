@@ -10,7 +10,7 @@ export default function TabNavigate() {
         <img src="images/big-data.svg" alt=""/>
         <span>Upload voice</span>
       </Link>
-      <Link className="tab-navigate__item" to={customPath('/record-audio')}>
+      <Link className="tab-navigate__item" to={customPath('/test-layout')}>
         <img src="images/email.svg" alt=""/>
         <span>Upload image</span>
       </Link>
