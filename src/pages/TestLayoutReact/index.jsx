@@ -13,7 +13,7 @@ export default function Index() {
     const [height, setHeight] = useState("");
     const [itemResize, setItemResize] = useState(undefined);
     const data = [
-        { i: "1", x: 0, y: 0, w: 1, h: 1 },
+        { i: "1", x: 0, y: 0, w: 3, h: 2 },
         { i: "2", x: 1, y: 0, w: 1, h: 1 },
         { i: "3", x: 2, y: 0, w: 1, h: 1 },
         { i: "4", x: 3, y: 0, w: 1, h: 1 },
@@ -94,7 +94,6 @@ export default function Index() {
                                                 <div key={item.i} className="widget-layout">
                                                     <ItemWidget itemWidget={item} /> 
                                                 </div>
-                                           
                                             ))}
                                         </GridLayout>
                                     </div>
@@ -107,7 +106,7 @@ export default function Index() {
                         </Modal>                       
                         {/* PHAN WIDGET */}
                         <div className="dashboards-widget-inline-catalog flex-column flex-noshrink scroll-hidden">
-                            phan tab them
+                            Add more widget , we have list some widget
                         </div>
                     </div>
                 </div>
