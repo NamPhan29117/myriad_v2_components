@@ -84,7 +84,8 @@ export default function Index() {
                                             className="layout"
                                             layout={layout}
                                             cols={12}
-                                            compactType="horizontal"
+                                            // compactType="horizontal"
+                                            verticalCompact={false}
                                             rowHeight={160}
                                             width={2030}
                                             onLayoutChange={(layout) => console.log(layout)}
