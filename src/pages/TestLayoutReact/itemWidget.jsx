@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 
 export default function ItemWidget(props) {
-    const {itemWidget} = props
+  const { itemWidget, onDeleteWidget } = props;
+  console.log(onDeleteWidget);
   return (
-    <div className='wrap-widget'>
-        {/* <span onClick={()=>{
+    <div className="wrap-widget">
+      {/* <span onClick={()=>{
         // showModal()
         // setItemResize(item.i)
         }}>config</span>
@@ -15,16 +16,19 @@ export default function ItemWidget(props) {
         x
         </span>
         <span>{itemWidget.i}</span> */}
-        <div className='widget-header'>
-            <div className='left'>Test Widget</div>
-            <div className='right'>
-                <img alt='' src='images/setting-icon.svg' className='config-icon'/>
-                <img alt='' src="images/delete-icon.svg" className='delete-icon'/>
-            </div>
+      <div className="widget-header">
+        <div className="left">Test Widget</div>
+        <div className="right">
+          <img alt="" src="images/setting-icon.svg" className="config-icon" />
+          <img
+            alt=""
+            src="images/delete-icon.svg"
+            className="delete-icon"
+            onClick={() => alert("okkkkk")}
+          />
         </div>
-        <div className='widget-body'>
-
-        </div>
+      </div>
+      <div className="widget-body"></div>
     </div>
-  )
+  );
 }

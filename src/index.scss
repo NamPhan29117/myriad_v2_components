@@ -109,11 +109,15 @@ input {
     line-height: 19px;
     font-weight: $regular;
   }
-  &--active{
+  &--active {
     background-color: #29abe2;
   }
 
-  &--deactive{
-    background-color: #707070
+  &--deactive {
+    background-color: #707070;
   }
+}
+
+.left-auto {
+  margin-left: auto;
 }
