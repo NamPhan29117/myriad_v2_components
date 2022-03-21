@@ -1,7 +1,8 @@
-import React, { useState, useReducer } from "react";
-import "./style.scss";
+import React, { useState, useReducer, useEffect } from "react";
+
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
+import "./style.scss";
 import GridLayout from "react-grid-layout";
 import { Modal, Select } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,17 +11,24 @@ import { useForm } from "react-hook-form";
 import classNames from "classnames";
 
 const data = [
-  { i: "" + Date.now(), x: 0, y: 0, w: 2, h: 2, title: "Example widget" },
+  {
+    i: "" + Date.now(),
+    x: 0,
+    y: 0,
+    w: 2,
+    h: 2,
+    title: "Example widget 1",
+  },
 ];
 
 export default function Index() {
   const initialState = { dataLayout: data };
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [width, setWidth] = useState("");
-  const [height, setHeight] = useState("");
+
   const [itemResize, setItemResize] = useState(null);
   const [activeWidgetCatalog, setActiveWidgetCatalog] = useState(undefined);
   const [itemHasAdd, setItemHasAdd] = useState(null);
+  const [dropWidget, setDropWidget] = useState(undefined);
   const { Option } = Select;
 
   const { handleSubmit } = useForm();
@@ -86,19 +94,33 @@ export default function Index() {
   };
 
   const [state, dispatch] = useReducer(handlerDataLayout, initialState);
-  console.log((state.dataLayout.length * 2) % 12);
-  const widgetCatalogs = [
-    {
-      title: "Assigned to Me",
-      description:
-        "Allows team members to quickly view and manage work Allows team members to quickly view and manage work",
-      i: "" + Date.now(),
-      x: (state.dataLayout.length * 2) % 12,
-      y: 0, // puts it at the bottom
-      w: 2,
-      h: 2,
-    },
-  ];
+  const widgetCatalogs = React.useMemo(() => {
+    return [
+      {
+        id: "id-1",
+        title: "Assigned to Me",
+        img: "https://dev.azure.com/namphan0323/_static/Widgets/CatalogIcons/assignedToMe.png",
+        description:
+          "Allows team members to quickly view and manage work Allows team members to quickly view and manage work",
+        i: "1" + Date.now(),
+        x: (state.dataLayout.length * 2) % 12,
+        y: 0, // puts it at the bottom
+        w: 2,
+        h: 2,
+      },
+      {
+        id: "id-2",
+        title: "Build history",
+        img: "https://dev.azure.com/namphan0323/_static/Widgets/CatalogIcons/buildChart.png",
+        description: "Shows the build history of a selected build pipeline.",
+        i: "2" + Date.now(),
+        x: (state.dataLayout.length * 2) % 12,
+        y: 0, // puts it at the bottom
+        w: 3,
+        h: 3,
+      },
+    ];
+  }, [state.dataLayout.length]);
 
   const handleCancel = () => {
     setIsModalVisible(false);
@@ -137,6 +159,25 @@ export default function Index() {
     }
   };
 
+  const onDrop = (layout, layoutItem, _event) => {
+    const { x, y, w, h, i } = layoutItem;
+    const itemHasAdd = {
+      x,
+      y,
+      w,
+      h,
+      i,
+    };
+    dispatch({
+      type: "ON_ADD_WIDGET",
+      payload: itemHasAdd,
+    });
+  };
+
+  // if (dropWidget) {
+  //   console.log(dropWidget);
+  // }
+
   return (
     <div
       className="v-scroll-auto flex flex-grow relative region-content"
@@ -155,13 +196,18 @@ export default function Index() {
                       className="layout"
                       layout={state.dataLayout}
                       cols={12}
-                      // compactType="horizontal"
-                      verticalCompact={false}
                       compactType={null}
                       rowHeight={160}
                       width={2030}
-                      onLayoutChange={(layout) => console.log(layout)}
+                      // onLayoutChange={(layout) => getNewLayout(layout)}
                       isResizable={false}
+                      onDrop={onDrop}
+                      isDroppable={true}
+                      droppingItem={{
+                        i: "" + Date.now(),
+                        w: dropWidget ? dropWidget.w : 1,
+                        h: dropWidget ? dropWidget.h : 1,
+                      }}
                     >
                       {state.dataLayout.map((item) => (
                         <div key={item.i} className="widget-layout">
@@ -274,23 +320,35 @@ export default function Index() {
                 {widgetCatalogs.map((item) => {
                   return (
                     <div
+                      key={item.id}
+                      id={item.id}
+                      draggable={true}
+                      unselectable="on"
+                      // this is a hack for firefox
+                      // Firefox requires some kind of initialization
+                      // which we can do by adding this attribute
+                      // @see https://bugzilla.mozilla.org/show_bug.cgi?id=568313
+
+                      onDragStart={(e) => {
+                        const itemDrop = widgetCatalogs.filter((item) => {
+                          return item.id === e.target.id;
+                        })[0];
+                        setDropWidget(itemDrop);
+                        e.dataTransfer.setData("text/plain", "");
+                      }}
                       className={classNames(
                         {
                           active: item.i === activeWidgetCatalog,
                         },
-                        "widget-catalog-entry"
+                        "widget-catalog-entry droppable-element"
                       )}
-                      key={item}
                       onClick={() => {
                         setItemHasAdd(item);
                         setActiveWidgetCatalog(item.i);
                       }}
                     >
                       <div className="widget-catalog-image">
-                        <img
-                          alt=""
-                          src="https://dev.azure.com/namphan0323/_static/Widgets/CatalogIcons/assignedToMe.png"
-                        />
+                        <img alt="" src={item.img} />
                       </div>
                       <div className="widget-details">
                         <div className="widget-details-title section-title-s2ix">
