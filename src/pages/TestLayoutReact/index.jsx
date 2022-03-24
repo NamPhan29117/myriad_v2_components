@@ -1,5 +1,7 @@
 import React, { useState, useReducer, useEffect } from "react";
-
+import map from "lodash/map";
+import maxBy from "lodash/maxBy";
+import { v4 as uuidv4 } from "uuid";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
 import "./style.scss";
@@ -11,14 +13,14 @@ import { useForm } from "react-hook-form";
 import classNames from "classnames";
 
 const data = [
-  {
-    i: "" + Date.now(),
-    x: 0,
-    y: 0,
-    w: 2,
-    h: 2,
-    title: "Example widget 1",
-  },
+  // {
+  //   i: uuidv4(),
+  //   x: 0,
+  //   y: 0,
+  //   w: 2,
+  //   h: 2,
+  //   title: "Example widget 1",
+  // },
 ];
 
 export default function Index() {
@@ -29,7 +31,11 @@ export default function Index() {
   const [activeWidgetCatalog, setActiveWidgetCatalog] = useState(undefined);
   const [itemHasAdd, setItemHasAdd] = useState(null);
   const [dropWidget, setDropWidget] = useState(undefined);
+  const [minWidth, setMinWidth] = useState(10);
+  // const [compactType, setCompactType] = useState("vertical");
   const { Option } = Select;
+
+  // console.log("vvvvvvvvvvvv", compactType);
 
   const { handleSubmit } = useForm();
 
@@ -102,7 +108,7 @@ export default function Index() {
         img: "https://dev.azure.com/namphan0323/_static/Widgets/CatalogIcons/assignedToMe.png",
         description:
           "Allows team members to quickly view and manage work Allows team members to quickly view and manage work",
-        i: "1" + Date.now(),
+        i: uuidv4(),
         x: (state.dataLayout.length * 2) % 12,
         y: 0, // puts it at the bottom
         w: 2,
@@ -113,7 +119,7 @@ export default function Index() {
         title: "Build history",
         img: "https://dev.azure.com/namphan0323/_static/Widgets/CatalogIcons/buildChart.png",
         description: "Shows the build history of a selected build pipeline.",
-        i: "2" + Date.now(),
+        i: uuidv4(),
         x: (state.dataLayout.length * 2) % 12,
         y: 0, // puts it at the bottom
         w: 3,
@@ -160,23 +166,73 @@ export default function Index() {
   };
 
   const onDrop = (layout, layoutItem, _event) => {
-    const { x, y, w, h, i } = layoutItem;
-    const itemHasAdd = {
-      x,
-      y,
-      w,
-      h,
-      i,
-    };
-    dispatch({
-      type: "ON_ADD_WIDGET",
-      payload: itemHasAdd,
-    });
+    if (layout && layout.length > 0) {
+      const { x, y, w, h, i } = layout[layout.length - 1];
+      const itemHasAdd = {
+        x,
+        y,
+        w,
+        h,
+        i,
+        title: dropWidget.title,
+      };
+      dispatch({
+        type: "ON_ADD_WIDGET",
+        payload: itemHasAdd,
+      });
+    }
   };
 
-  // if (dropWidget) {
-  //   console.log(dropWidget);
-  // }
+  // const triggerEventChange = () => {
+  //   console.log("vvvvv");
+  // };
+
+  // useEffect(() => {
+  //   setCompactType(null);
+  // }, [state.dataLayout]);
+
+  const onLayoutChange = (layout) => {
+    if (layout.length > 0) {
+      const itemMaxX = maxBy(layout, "x");
+      const minWidthlayout = 170 * parseInt(itemMaxX.x + itemMaxX.w) + 10;
+      setMinWidth(minWidthlayout);
+    }
+  };
+
+  const createElement = (el) => {
+    const i = el.i;
+    return (
+      <div
+        key={i}
+        data-grid={el}
+        className="widget-layout"
+        style={{ touchAction: "none" }}
+      >
+        <div className="wrap-widget">
+          <div className="widget-header">
+            <div className="left">{el.title ? el.title : "Test Widget"}</div>
+            <div className="right">
+              <div
+                onClick={() => {
+                  editAbleWidget(el);
+                }}
+              >
+                <FontAwesomeIcon icon={faGear} size="1x" color="#666666" />
+              </div>
+              <div onClick={() => onDeleteWidget(el.i)}>
+                <FontAwesomeIcon
+                  icon={faX}
+                  size="1x"
+                  color="rgba(232,17,35,1)"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="widget-body"></div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div
@@ -191,56 +247,29 @@ export default function Index() {
             <div className="primary-content flex-grow flex-column scroll-hidden">
               <div className="flex-grow flex-column scroll-hidden">
                 <div className="scroll-auto flex-grow flex-column">
-                  <div className="devops-dashboard-grid flex-grow editable">
+                  <div
+                    className="devops-dashboard-grid flex-grow editable"
+                    style={{ minWidth: `${minWidth}px` }}
+                  >
                     <GridLayout
                       className="layout"
                       layout={state.dataLayout}
                       cols={12}
-                      compactType={null}
+                      compactType={"vertical"}
                       rowHeight={160}
-                      width={2030}
-                      // onLayoutChange={(layout) => getNewLayout(layout)}
+                      width={2050}
+                      onLayoutChange={onLayoutChange}
+                      useCSSTransforms={true}
                       isResizable={false}
                       onDrop={onDrop}
                       isDroppable={true}
                       droppingItem={{
-                        i: "" + Date.now(),
+                        i: uuidv4(),
                         w: dropWidget ? dropWidget.w : 1,
                         h: dropWidget ? dropWidget.h : 1,
                       }}
                     >
-                      {state.dataLayout.map((item) => (
-                        <div key={item.i} className="widget-layout">
-                          <div className="wrap-widget">
-                            <div className="widget-header">
-                              <div className="left">
-                                {item.title ? item.title : "Test Widget"}
-                              </div>
-                              <div className="right">
-                                <div
-                                  onClick={() => {
-                                    editAbleWidget(item);
-                                  }}
-                                >
-                                  <FontAwesomeIcon
-                                    icon={faGear}
-                                    size="1x"
-                                    color="#666666"
-                                  />
-                                </div>
-                                <div onClick={() => onDeleteWidget(item.i)}>
-                                  <FontAwesomeIcon
-                                    icon={faX}
-                                    size="1x"
-                                    color="rgba(232,17,35,1)"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="widget-body"></div>
-                          </div>
-                        </div>
-                      ))}
+                      {map(state.dataLayout, (el) => createElement(el))}
                     </GridLayout>
                   </div>
                 </div>
@@ -330,10 +359,12 @@ export default function Index() {
                       // @see https://bugzilla.mozilla.org/show_bug.cgi?id=568313
 
                       onDragStart={(e) => {
+                        // setCompactType(null);
                         const itemDrop = widgetCatalogs.filter((item) => {
                           return item.id === e.target.id;
                         })[0];
                         setDropWidget(itemDrop);
+
                         e.dataTransfer.setData("text/plain", "");
                       }}
                       className={classNames(
