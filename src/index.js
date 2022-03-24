@@ -14,10 +14,9 @@ import "./reset.scss";
 
 const msalInstance = new PublicClientApplication(msalConfig);
 
-
 ReactDOM.render(
   <React.StrictMode>
-   <MsalProvider instance={msalInstance}>
+    <MsalProvider instance={msalInstance}>
       <App />
     </MsalProvider>
   </React.StrictMode>,

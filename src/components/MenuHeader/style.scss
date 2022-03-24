@@ -1,71 +1,108 @@
 @import "../../style/variable.scss";
-.header-menu{
-    width: 100%;
-    height: 50px;
-    background-color:#29ABE2;
+.header-menu {
+  width: 100%;
+  height: 50px;
+  background-color: #29abe2;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  &__logo-right {
+    height: 30px;
+    width: 92px;
+  }
+
+  &__search-center {
+    width: 31%;
+    height: 30px;
+    border: 0.5px solid #999999;
+    border-radius: 3px;
+    margin: 0 auto;
+    position: relative;
+    img {
+      position: absolute;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      right: 10px;
+      cursor: pointer;
+    }
+    form {
+      height: 100%;
+      width: 100%;
+    }
+    input {
+      height: 100%;
+      width: 100%;
+      background-color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      padding-right: 40px;
+      font-size: $sizeHeading;
+      font-family: $fontPrimary;
+      font-weight: $regular;
+      color: #999999;
+    }
+  }
+
+  &__left {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
-    &__logo-right{
-        height:30px;
-        width: 92px;
+    height: 100%;
+    .item-avatar {
+      margin-left: 20px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
     }
+    .item-left {
+      margin-left: 20px;
+      width: 17px;
+      height: 17px;
+      position: relative;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}
+.render-tile {
+  display: flex;
+  width: 288px;
+  justify-content: space-between;
+  .sign-out-text {
+    text-decoration: underline;
+    color: #025199;
+    cursor: pointer;
+  }
+}
 
-    &__search-center{
-        width: 31%;
-        height: 30px;
-        border: 0.5px solid #999999;
-        border-radius: 3px;
-        margin: 0 auto;
-        position: relative;
-        img{
-            position: absolute;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            right: 10px;
-            cursor: pointer;
-        }
-        form{
-            height:100%;
-            width: 100%;
-        }
-        input{
-            height:100%;
-            width: 100%;
-            background-color:#ffffff;
-            border: none;
-            border-radius: 3px;
-            padding: 5px 10px;
-            padding-right: 40px;
-            font-size: $sizeHeading;
-            font-family: $fontPrimary;
-            font-weight: $regular;
-            color: #999999;
-        }
+.render-content {
+  display: flex;
+  .img-avatar {
+    width: 88px;
+    height: 88px;
+    margin-right: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
     }
+  }
 
-    &__left{
-        display:flex;
-        align-items: center;
-        height:100%;
-        .item-avatar{
-            margin-left: 20px;
-            cursor: pointer;
-        }
-        .item-left{
-            margin-left: 20px;
-            width: 17px;
-            height: 17px;
-            position: relative;
-            cursor: pointer;
-            img{
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                left: 0;
-                right: 0;
-            }
-        }
+  .info-account {
+    width: calc(100% - 108px);
+    .name {
+      font-size: $sizeMainText;
     }
+    .username {
+      margin-top: 8px;
+      color: #0071bc;
+    }
+  }
 }
