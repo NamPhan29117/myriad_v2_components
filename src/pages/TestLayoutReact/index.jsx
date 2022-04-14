@@ -105,7 +105,7 @@ export default function Index() {
       {
         id: "id-1",
         title: "Assigned to Me",
-        img: "https://dev.azure.com/namphan0323/_static/Widgets/CatalogIcons/assignedToMe.png",
+        img: "images/assignedToMe.png",
         description:
           "Allows team members to quickly view and manage work Allows team members to quickly view and manage work",
         i: uuidv4(),
@@ -117,7 +117,7 @@ export default function Index() {
       {
         id: "id-2",
         title: "Build history",
-        img: "https://dev.azure.com/namphan0323/_static/Widgets/CatalogIcons/buildChart.png",
+        img: "images/buildChart.png",
         description: "Shows the build history of a selected build pipeline.",
         i: uuidv4(),
         x: (state.dataLayout.length * 2) % 12,
